@@ -8,7 +8,7 @@
 
 <meta name="author" content="Jeet Sukumaran">
 
-<title>Learning (just enough) Julia for scientific informatics and reasoning – Just enough Julia for scientific informatics and reasoning</title>
+<title>Pathogen fitness as a function of virulence (Frank, 1996) – Just enough Julia for scientific informatics and reasoning</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,30 +21,48 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-814259f4bb4f29d3679909d06d088a68.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/foldbox/foldbox.css" rel="stylesheet">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-814259f4bb4f29d3679909d06d088a68.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/foldbox/foldbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,37 +90,8 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-content-part-order','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <style>
-.model-definition {
+.curriculum-resources {
   --color1: #ffffff;
   --color2: #000000;
 }
@@ -110,7 +99,7 @@ ul.task-list li input[type="checkbox"] {
   --color1: #ffffff;
   --color2: #000000;
 }
-.curriculum-resources {
+.model-definition {
   --color1: #ffffff;
   --color2: #000000;
 }
@@ -154,7 +143,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar docked quarto-light">
@@ -183,7 +172,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Just enough Julia for scientific informatics and reasoning</a> 
+      <a href="../../">Just enough Julia for scientific informatics and reasoning</a> 
         <div class="sidebar-tools-main">
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
@@ -201,21 +190,27 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#pathogen-fitness-as-function-of-virulence" id="toc-pathogen-fitness-as-function-of-virulence" class="nav-link active" data-scroll-target="#pathogen-fitness-as-function-of-virulence"><span class="header-section-number">1</span> Pathogen fitness as function of virulence</a></li>
+  <li><a href="#linear-decline-in-host-resources-due-to-virulence" id="toc-linear-decline-in-host-resources-due-to-virulence" class="nav-link" data-scroll-target="#linear-decline-in-host-resources-due-to-virulence"><span class="header-section-number">2</span> Linear decline in host resources due to virulence</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Learning (just enough) Julia for scientific informatics and reasoning</h1>
-<p class="subtitle lead">A guide to learning the specific computational competencies you need for your research, from ideas to publication and beyond</p>
+<h1 class="title">Pathogen fitness as a function of virulence (Frank, 1996)</h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-page-right">
+<div class="quarto-title-meta column-body">
 
     <div>
     <div class="quarto-title-meta-heading">Author</div>
@@ -233,41 +228,39 @@ window.Quarto = {
 </header>
 
 
+<section id="pathogen-fitness-as-function-of-virulence" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="pathogen-fitness-as-function-of-virulence"><span class="header-section-number">1</span> Pathogen fitness as function of virulence</h2>
+<p><span class="citation" data-cites="frank1996models">(<a href="#ref-frank1996models" role="doc-biblioref">Frank 1996</a>)</span> provides an alternate formulation of virulence-transmission trade-off which defines <em>pathogen fitness</em> as a product of increase in capacity for <em>transmission success</em> for a particular pathogen reproductive intensity, weighted or scaled by the reduction in opportunity, duration, or effectiveness in transmission due to damage to the host due to the virulence of that reproductive intensity.</p>
+<p>The fitness of a pathogen can be measured by the net gain in infected hosts, <span class="math inline">\(w\)</span>,</p>
+<p><span id="eq-frank1996-single-pathogen-fitness"><span class="math display">\[
+w = z f(z),
+\tag{1}\]</span></span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(w\)</span> is the pathogen fitness (corresponding to <span class="math inline">\(R_0\)</span>, the net total reproductive output of the virus in terms of newly infected hosts),</li>
+<li><span class="math inline">\(z\)</span> is a measure correlated positively with parasite reproductive intensity, which correlates positively with <em>capacity for transmission success</em>, as measured by the number of hosts infected by a single infected host given full transmission opportunity (if host fitness, longevity, resources, mobility, etc. were not impacted by virus reproductive activity),</li>
+<li><span class="math inline">\(f(z)\)</span>, a “declining function of <span class="math inline">\(z\)</span>” (meaning that <span class="math inline">\(f(z)\)</span> decreases as <span class="math inline">\(z\)</span> increases), which is the cost or penalty factor accounting for reduction in transmission success due to depletion of host resources, fitness, longevity and so on as a result of pa.</li>
+</ul>
+</section>
+<section id="linear-decline-in-host-resources-due-to-virulence" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="linear-decline-in-host-resources-due-to-virulence"><span class="header-section-number">2</span> Linear decline in host resources due to virulence</h2>
+<p><span class="citation" data-cites="frank1996models">(<a href="#ref-frank1996models" role="doc-biblioref">Frank 1996</a>)</span> describes a linear function to model the degradation of the host resources available due to virulence, <span class="math inline">\(f(z) = 1 - \alpha z\)</span>, where <span class="math inline">\(\alpha\)</span> is a scaling relation between transmission (<span class="math inline">\(z\)</span>) and virulence (<span class="math inline">\(\alpha z\)</span>).</p>
+<p>The pathogen fitness function under this linear scaling is</p>
+<p><span id="eq-frank1996-single-pathogen-fitness-linear"><span class="math display">\[
+\begin{align}
+w = z (1 - \alpha z)
+\end{align}
+\tag{2}\]</span></span></p>
 
 
 
+</section>
 
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-<table class="quarto-listing-table table table-striped">
-<thead>
-<tr>
-
-<th>
-#
-</th>
-
-<th>
-Title
-</th>
-
-</tr>
-</thead>
-<tbody class="list">
-
-<tr data-index="0" data-listing-file-modified-sort="1771123945135" data-listing-reading-time-sort="1" data-listing-word-count-sort="93" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-content-part-order">&nbsp;</span>
-</td>
-<td>
-<a href="./content/01_orientation-and-tooling/index.html" class="title listing-title">&nbsp;</a>
-</td>
-
-</tr>
-
-</tbody>
-</table>
-<div class="listing-no-matching d-none">No matching items</div>
-</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-frank1996models" class="csl-entry" role="listitem">
+Frank, Steven A. 1996. <span>“Models of Parasite Virulence.”</span> <em>The Quarterly Review of Biology</em> 71 (1): 37–78. <a href="https://doi.org/10.1086/419267">https://doi.org/10.1086/419267</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

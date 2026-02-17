@@ -8,7 +8,7 @@
 
 <meta name="author" content="Jeet Sukumaran">
 
-<title>Learning (just enough) Julia for scientific informatics and reasoning – Just enough Julia for scientific informatics and reasoning</title>
+<title>Basics of visualizing mathematical models: evolutionary dynamics of virulence-transmission trade-off models – Just enough Julia for scientific informatics and reasoning</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,30 +21,48 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-814259f4bb4f29d3679909d06d088a68.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/foldbox/foldbox.css" rel="stylesheet">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-814259f4bb4f29d3679909d06d088a68.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/foldbox/foldbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,53 +90,16 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-content-part-order','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <style>
-.model-definition {
-  --color1: #ffffff;
-  --color2: #000000;
-}
-.curriculum-exercise {
-  --color1: #ffffff;
-  --color2: #000000;
-}
-.curriculum-resources {
-  --color1: #ffffff;
-  --color2: #000000;
-}
 .curriculum-tutorials {
   --color1: #ffffff;
   --color2: #000000;
 }
-.curriculum-proficiencies {
+.curriculum-competencies {
+  --color1: #ffffff;
+  --color2: #000000;
+}
+.curriculum-resources {
   --color1: #ffffff;
   --color2: #000000;
 }
@@ -154,10 +135,10 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-sidebar docked quarto-light">
+<body class="nav-sidebar docked slimcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -183,7 +164,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Just enough Julia for scientific informatics and reasoning</a> 
+      <a href="../../">Just enough Julia for scientific informatics and reasoning</a> 
         <div class="sidebar-tools-main">
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
@@ -201,21 +182,30 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-virulence-transmission-trade-off-function" id="toc-the-virulence-transmission-trade-off-function" class="nav-link active" data-scroll-target="#the-virulence-transmission-trade-off-function"><span class="header-section-number">1</span> The virulence-transmission trade-off function</a>
+  <ul class="collapse">
+  <li><a href="#the-classical-virulence-transmission-trade-off-function" id="toc-the-classical-virulence-transmission-trade-off-function" class="nav-link" data-scroll-target="#the-classical-virulence-transmission-trade-off-function"><span class="header-section-number">1.1</span> The classical virulence-transmission trade-off function</a></li>
+  <li><a href="#the-pathogen-fitness-function" id="toc-the-pathogen-fitness-function" class="nav-link" data-scroll-target="#the-pathogen-fitness-function"><span class="header-section-number">1.2</span> The pathogen fitness function</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content page-columns page-full column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Learning (just enough) Julia for scientific informatics and reasoning</h1>
-<p class="subtitle lead">A guide to learning the specific computational competencies you need for your research, from ideas to publication and beyond</p>
+<h1 class="title">Basics of visualizing mathematical models: evolutionary dynamics of virulence-transmission trade-off models</h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-page-right">
+<div class="quarto-title-meta column-body">
 
     <div>
     <div class="quarto-title-meta-heading">Author</div>
@@ -233,41 +223,95 @@ window.Quarto = {
 </header>
 
 
+<section id="the-virulence-transmission-trade-off-function" class="level2 page-columns page-full" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="the-virulence-transmission-trade-off-function"><span class="header-section-number">1</span> The virulence-transmission trade-off function</h2>
+<section id="the-classical-virulence-transmission-trade-off-function" class="level3 page-columns page-full" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="the-classical-virulence-transmission-trade-off-function"><span class="header-section-number">1.1</span> The classical virulence-transmission trade-off function</h3>
+<p>The classical virulence-transmission trade-off function, following the notation of <span class="citation" data-cites="frank1996models">(<a href="#ref-frank1996models" role="doc-biblioref">Frank 1996</a>)</span>, is:</p>
+<p><span class="math display">\[
+R_0 = \frac{\beta(\nu)N}{\delta + \nu + c(\nu)},
+\]</span></p>
+<p>where:</p>
+<ul>
+<li><p><span class="math inline">\(R_0\)</span> The basic reproduction number. The expected number of secondary infections produced by a single infected host introduced into a fully susceptible population of size <span class="math inline">\(N\)</span>. The transmission intensity multiplied by mean infectious duration.</p></li>
+<li><p><span class="math inline">\(\nu\)</span> Virulence. In this formulation, <span class="math inline">\(\nu\)</span> is the disease-induced host mortality intensity. This represents the per-capita hazard at which infected hosts die because of the pathogen.</p></li>
+<li><p><span class="math inline">\(\beta(\nu)\)</span> Transmission coefficient (often called the transmission intensity). It gives the per-capita rate at which an infected host generates new infections per susceptible host, and it is assumed to depend on virulence. The biological trade-off is encoded here: increasing <span class="math inline">\(\nu\)</span> may increase within-host replication and hence transmission, so <span class="math inline">\(\beta'(\nu) &gt; 0\)</span> over some range.</p></li>
+<li><p><span class="math inline">\(N\)</span> Total density (or number) of susceptible hosts in the population at invasion. Because <span class="math inline">\(R_0\)</span> is defined at the start of an epidemic, essentially all hosts are susceptible, so the force of infection scales with <span class="math inline">\(N\)</span>.</p></li>
+<li><p><span class="math inline">\(\delta\)</span> Background host mortality intensity (natural death intensity unrelated to infection). This removes infected hosts independently of the pathogen’s virulence.</p></li>
+<li><p><span class="math inline">\(c(\nu)\)</span> Additional loss intensity associated with infection that is not direct mortality. Examples include recovery with immunity, behavioral isolation, treatment, or reduced contact rate induced by symptoms. It may depend on virulence if, for example, more virulent infections provoke faster immune clearance or stronger behavioral avoidance.</p></li>
+</ul>
+
+<div class="no-row-height column-margin column-container"><div class="callout callout-style-default callout-tip callout-titled" title="Intensity vs. rate">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Intensity vs.&nbsp;rate
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>All intensities are rates, but not all rates are intensities. A rate is a general term indicating the change of one quantity relative to another, expresed as a ratio (“rate” and “ratio” have the same linguistic root). An “intensity” is a rate, but one some characteristics is the instantaneous hazard parameter (= rate) of a stochastic process. In classical ODE epidemic models (e.g., SIR), “rate” and “intensity” are often used interchangeably because constant hazards produce exponential waiting times and yield linear per-capita ODE terms.</p>
+</div>
+</div></div><p>Note that:</p>
+<p><span class="math display">\[
+R_0 = \text{transmission intensity} \times \text{mean infection duration}.
+\]</span></p>
+<ul>
+<li>The numerator, <span class="math inline">\(\beta(\nu)N\)</span>, is the <em>transmission intensity</em>, i.e.&nbsp;the per-capita intensity (or rate) of generating new infections in a population of size <span class="math inline">\(N\)</span>.</li>
+<li>The denominator <span class="math inline">\(\delta + \nu + c(\nu)\)</span> gives the <em>total removal intensity</em> of infected hosts: the rate of removal of infected hosts from the population. Thus, <span class="math inline">\(\frac{1}{\delta + \nu + c(\nu)}\)</span> gives the <em>mean infectious duration</em>.</li>
+</ul>
+<p>As <span class="math inline">\(R_0\)</span> measures the net increase of infected host over time, expressed as a ratio of infected hosts gain (the numerator) to infected hosts lost (the denominator), it serves as an index of the epidemiological state of an infectious disease. - If the numerator is greater than the denominator, there will be more infections generated than removed from the population, leading to a net increase in infections: the disease in an epidemic phase. - If the numerator is less than the denominator, there infections will be removed from the population faster than new infections will occur: the disease will “die out” without becoming an epidemic.</p>
+</section>
+<section id="the-pathogen-fitness-function" class="level3 page-columns page-full" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="the-pathogen-fitness-function"><span class="header-section-number">1.2</span> The pathogen fitness function</h3>
+<p><span class="citation" data-cites="frank1996models">(<a href="#ref-frank1996models" role="doc-biblioref">Frank 1996</a>)</span> provides an alternate formulation of virulence-transmission trade-off which defines <em>parasite fitness</em> as a product of capacity for <em>transmission success</em> weighted or scaled by the reduction in opportunity, duration, or effectiveness in transmission due to virulence-related damage to the host.</p>
+<p>The fitness of a parasite can be measured by the net gain in infected hosts, <span class="math inline">\(w\)</span>,</p>
+<p><span id="eq-frank1996-single-pathogen-fitness"><span class="math display">\[
+w = z f(z),
+\tag{1}\]</span></span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(w\)</span> is the parasite fitness (corresponding to <span class="math inline">\(R_0\)</span>, the net total reproductive output of the virus in terms of newly infected hosts),</li>
+<li><span class="math inline">\(z\)</span> is the a measure of parasite <em>transmission success</em>, an index of the number of hosts potentially infected, given full transmission opportunity,</li>
+<li><span class="math inline">\(f(z)\)</span>, a “declining function of <span class="math inline">\(z\)</span>” (<span class="math inline">\(f(z)\)</span> decreases as <span class="math inline">\(z\)</span> increases) is the cost or penalty factor accounting for reduction in transmission opportunity or windows due to depletion of host or host resources or host fitness.</li>
+</ul>
+<p>By <em>optimizing</em> the function with respect to the parameter <span class="math inline">\(z\)</span>, that is, finding the value of <span class="math inline">\(z\)</span> that maximizes <span class="math inline">\(w\)</span>.</p>
+
+<div class="no-row-height column-margin column-container"><div class="callout callout-style-default callout-tip callout-empty-content callout-titled" title="Optimization">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Optimization
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div></div><section id="linear-decline-in-host-resources-due-to-virulence" class="level4" data-number="1.2.1">
+<h4 data-number="1.2.1" class="anchored" data-anchor-id="linear-decline-in-host-resources-due-to-virulence"><span class="header-section-number">1.2.1</span> Linear decline in host resources due to virulence</h4>
+<p><span class="citation" data-cites="frank1996models">(<a href="#ref-frank1996models" role="doc-biblioref">Frank 1996</a>)</span> describes a linear function to model the degradation of the host resources available due to virulence, <span class="math inline">\(f(z) = 1 - \alpha z\)</span>, where <span class="math inline">\(\alpha\)</span> is a scaling relation between transmission (<span class="math inline">\(z\)</span>) and virulence (<span class="math inline">\(\alpha z\)</span>).</p>
+<p>The pathogen fitness function under this linear scaling is</p>
+<p><span class="math display">\[
+\begin{align}
+w = z (1 - \alpha z)
+\end{align}
+\]</span></p>
+<p>$$ {#eq-frank1996-single-pathogen-fitness-linear}</p>
 
 
 
+</section>
+</section>
+</section>
 
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-<table class="quarto-listing-table table table-striped">
-<thead>
-<tr>
-
-<th>
-#
-</th>
-
-<th>
-Title
-</th>
-
-</tr>
-</thead>
-<tbody class="list">
-
-<tr data-index="0" data-listing-file-modified-sort="1771123945135" data-listing-reading-time-sort="1" data-listing-word-count-sort="93" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-content-part-order">&nbsp;</span>
-</td>
-<td>
-<a href="./content/01_orientation-and-tooling/index.html" class="title listing-title">&nbsp;</a>
-</td>
-
-</tr>
-
-</tbody>
-</table>
-<div class="listing-no-matching d-none">No matching items</div>
-</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-frank1996models" class="csl-entry" role="listitem">
+Frank, Steven A. 1996. <span>“Models of Parasite Virulence.”</span> <em>The Quarterly Review of Biology</em> 71 (1): 37–78. <a href="https://doi.org/10.1086/419267">https://doi.org/10.1086/419267</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

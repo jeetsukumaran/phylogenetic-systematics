@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Jeet Sukumaran">
 
-<title>Course schedule – [BIOL 740] Phylogenetic systematics</title>
+<title>index – Just enough Julia for scientific informatics and reasoning</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,32 +24,31 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../index.html" rel="prev">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-44c44f26978ab4a65e617a2f48421451.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/quarto-contrib/foldbox/foldbox.css" rel="stylesheet">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-814259f4bb4f29d3679909d06d088a68.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/quarto-contrib/foldbox/foldbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
+  "panel-placement": "start",
+  "type": "textbox",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -70,81 +70,74 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
-
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <style>
-.Questions {
-  --color1: #008080;
+.curriculum-tutorials {
+  --color1: #ffffff;
+  --color2: #000000;
+}
+.curriculum-exercise {
+  --color1: #ffffff;
+  --color2: #000000;
+}
+.curriculum-proficiencies {
+  --color1: #ffffff;
+  --color2: #000000;
+}
+.model-definition {
+  --color1: #ffffff;
+  --color2: #000000;
+}
+.curriculum-resources {
+  --color1: #ffffff;
+  --color2: #000000;
 }
 </style>
 
 
-<link rel="stylesheet" href="../../_annex/css/styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../_annex/decor/sdsu-logo.png" alt="" class="navbar-logo light-content">
-    <img src="../../_annex/decor/sdsu-logo.png" alt="" class="navbar-logo dark-content">
-    </a>
-    <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">[BIOL 740] Phylogenetic systematics</span>
-    </a>
-  </div>
-        <div class="quarto-navbar-tools tools-end">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      Just enough Julia for scientific informatics and reasoning
+      </li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../../">Just enough Julia for scientific informatics and reasoning</a> 
+        <div class="sidebar-tools-main">
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
   </div>
 </a>
 </div>
-          <div id="quarto-search" class="" title="Search"></div>
-      </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../content/schedule/index.html">Course schedule</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
-<!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="../../index.html" class="sidebar-logo-link">
-      <img src="../../_annex/decor/site-logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
-      <img src="../../_annex/decor/site-logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
-      </a>
       </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">BIOL 740 Phylogenetic systematics</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../content/schedule/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Course schedule</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -156,13 +149,18 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Course schedule</h1>
 </div>
 
 
 
 <div class="quarto-title-meta column-page-right">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jeet Sukumaran </p>
+          </div>
+  </div>
     
   
     
@@ -173,255 +171,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div id="2" class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display" data-execution_count="1">
-<div class="markdown">
-<table class="caption-top table table-sm table-striped small">
-<tbody>
-<tr class="odd">
-<th style="text-align: left;" data-quarto-table-cell-role="th"><strong>Week</strong></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th"><strong>From</strong></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th"><strong>To</strong></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th"><strong>Remarks</strong></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th"><strong>Topic</strong></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th"><strong>Felsenstein</strong></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th"><strong>Baum and Smith</strong></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th"><strong>McElreath</strong></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th"><strong>Monday Lecture</strong></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th"><strong>Wednesday Lecture</strong></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th"><strong>Activity</strong></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th"><strong>Assignments</strong></th>
-</tr>
-<tr class="even">
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">Jan 19</td>
-<td style="text-align: left;">Jan 23</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Introduction, orientation, and setting up</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">(No class)</td>
-<td style="text-align: left;">Introduction to the course</td>
-<td style="text-align: left;">Computing tools: setting up and familiarization</td>
-<td style="text-align: left;">Shell familiarization; File system familiarization</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">Jan 26</td>
-<td style="text-align: left;">Jan 30</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Phylogenetic trees</td>
-<td style="text-align: left;">Chapter 10</td>
-<td style="text-align: left;">Chapters 1,2, and 3</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Introduction to phylogenetic analysis</td>
-<td style="text-align: left;">Introduction to phylogenetic trees</td>
-<td style="text-align: left;">Tree data loading, writing, and visualization</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">Feb 02</td>
-<td style="text-align: left;">Feb 06</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Phylogenetic inference</td>
-<td style="text-align: left;">Chapter 3</td>
-<td style="text-align: left;">Chapters 4,5</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Anatomy and physiology of phylogenetic trees</td>
-<td style="text-align: left;">Classical phylogenetic inference approaches</td>
-<td style="text-align: left;">Classical phylogenetic inference workflows</td>
-<td style="text-align: left;">Classical phylogenetic inference workflows</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">Feb 09</td>
-<td style="text-align: left;">Feb 13</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Phylogenetic tree space</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Phylogenetic tree space and distances</td>
-<td style="text-align: left;">Phylogenetic tree space and distances</td>
-<td style="text-align: left;">Exam</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">Feb 16</td>
-<td style="text-align: left;">Feb 20</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Probability and likelihoods</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Review of probability and statistics</td>
-<td style="text-align: left;">Review of probability and statistics</td>
-<td style="text-align: left;">Julia: basic probability, likelihood</td>
-<td style="text-align: left;">Julia: basic probability, likelihood</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">6</td>
-<td style="text-align: left;">Feb 23</td>
-<td style="text-align: left;">Feb 27</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">The phylogenetic likelihood</td>
-<td style="text-align: left;">Chapter 16</td>
-<td style="text-align: left;">Chapter 8</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">The likelihood in phylogenetics</td>
-<td style="text-align: left;">The likelihood of a tree</td>
-<td style="text-align: left;">Julia: likelihood calculation of a tree "manually"</td>
-<td style="text-align: left;">IQ Tree</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">7</td>
-<td style="text-align: left;">Mar 02</td>
-<td style="text-align: left;">Mar 06</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Phylogenetic character models</td>
-<td style="text-align: left;">Chapter 13</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Phylogenetic character models</td>
-<td style="text-align: left;">Phylogenetic character models</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">8</td>
-<td style="text-align: left;">Mar 09</td>
-<td style="text-align: left;">Mar 13</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"><em>Mid-course review and feedback</em></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Exam</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">9</td>
-<td style="text-align: left;">Mar 16</td>
-<td style="text-align: left;">Mar 20</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Bayesian statistics</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Chapter 1: Golem of Prague; 2: Small worlds and large worlds</td>
-<td style="text-align: left;">Bayesian statistics</td>
-<td style="text-align: left;">Bayesian statistics</td>
-<td style="text-align: left;">Bayesian MCMC</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">Mar 23</td>
-<td style="text-align: left;">Mar 27</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Bayesian phylogenetic statistics</td>
-<td style="text-align: left;">Chapter 18</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Chapter 3: Sampling the imaginary</td>
-<td style="text-align: left;">From Bayesian statistics to Bayesian phylogenetics</td>
-<td style="text-align: left;">Bayesian phylogenetic priors</td>
-<td style="text-align: left;">Bayesian phylogenetic MCMC</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">11</td>
-<td style="text-align: left;">Mar 30</td>
-<td style="text-align: left;">Apr 03</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"><em>SPRING BREAK</em></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">SPRING BREAK</td>
-<td style="text-align: left;"><em>SPRING BREAK</em></td>
-<td style="text-align: left;"><em>SPRING BREAK</em></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">12</td>
-<td style="text-align: left;">Apr 06</td>
-<td style="text-align: left;">Apr 10</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Bayesian phylogenetic analysis</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Chapter 9: Markov chain Monte carlo</td>
-<td style="text-align: left;">Bayesian phylogenetic MCMC</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Exam</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">13</td>
-<td style="text-align: left;">Apr 13</td>
-<td style="text-align: left;">Apr 17</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Species tree estimation</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">14</td>
-<td style="text-align: left;">Apr 20</td>
-<td style="text-align: left;">Apr 24</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Divergence time estimation</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">15</td>
-<td style="text-align: left;">Apr 27</td>
-<td style="text-align: left;">May 01</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Diversification rate estimation</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">16</td>
-<td style="text-align: left;">May 04</td>
-<td style="text-align: left;">May 08</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Trait evolution</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
+<p> 01_workstation-setup-and-tooling ├──  _annex │ └──  timholy–setting-up-vscode-and-julia │ ├──  figures │ │ ├──  julia_extension.png │ │ ├──  julia_term_1.png │ │ ├──  vscode_ctrl_shift_p.png │ │ └──  vscode_with_julia_repl.png │ └──  index.qmd ├──  01_workstation-essentials.qmd ├──  02_filesystem-essentials.qmd ├──  03_git-and-github.qmd ├──  04_julia-environments-and-projects.qmd ├──  05_quarto.qmd ├──  06_vscode-and-extensions.qmd ├──  07_julia-quarto-project.qmd ├──  _outline.qmd └──  index.qmd</p>
 
 
 
@@ -826,16 +576,33 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
-<nav class="page-navigation column-page-right">
-  <div class="nav-page nav-page-previous">
-      <a href="../../index.html" class="pagination-link" aria-label="BIOL 740 Phylogenetic systematics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">BIOL 740 Phylogenetic systematics</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-  </div>
-</nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="mailto:jeetsukumaran@gmail.com">
+<p>© Jeet Sukumaran and co-authors</p>
+</a>
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-center">
+<p>Please share or adapt under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0).</p>
+</div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/jeetsukumaran">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 
